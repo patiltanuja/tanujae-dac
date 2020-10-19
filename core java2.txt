@@ -1,0 +1,278 @@
+
+import java.util.Scanner;
+class Que1
+{
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter number");
+	int n=sc.nextInt();
+	for(int i=1;i<=10;i++)
+	{
+	int t=n*i;
+	System.out.println(n+"x"+i+"="+t);
+	}
+}
+}
+
+----------------------------------------------
+
+import java.util.Scanner;
+class Que2
+{
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter number");
+	int n=sc.nextInt();
+	int rem,sum=0;
+	while(n>0)
+	{
+	rem=n%10;
+	sum=sum*10+rem;
+	n=n/10;
+	
+        }
+System.out.println("reverse number is= "+sum);
+}
+}
+
+--------------------------------------------------
+
+
+public class Que3
+{
+    public static void main(String args[])
+    {
+        int i,j,c;
+        for(i=2;i<200;i++){
+        c=0;
+            for(j=1;j<i;j++)
+            {
+                if(i%j==0)
+                c++;
+            }
+        }
+            if(c==2)
+            {
+            System.out.println("prime no");
+            }
+            else
+            {
+            System.out.println("not a prime no");
+            }     
+         
+    }
+}
+
+----------------------------------------
+
+import java.util.Scanner;
+class Que4
+{
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter number");
+	int n=sc.nextInt();
+	int sum=n*(n+1)*(2*n+1)/6;
+	System.out.println(sum);
+	}
+}
+
+---------------------------------------------
+
+
+import java.util.Scanner;
+class Que5
+{
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter first number");
+	int a=sc.nextInt();
+	System.out.println("enter last number");
+	int l=sc.nextInt();
+	System.out.println("enter number to check prime or not");
+	int n=sc.nextInt();
+	int c;
+	if(n>=a && n<=l)
+	{
+	 c=0;
+	     for(int i=2;i<=l;i++)
+		{
+	         if(n%i==0)
+	          {
+	          c++;
+	          }
+	        }
+	   if(c==2)
+	    {
+	      System.out.println("prime number");
+	    }
+	   else
+	    {
+	     System.out.println("not prime number");
+	    }
+       }
+}
+}
+
+--------------------------------------------------------
+import java.util.Scanner;
+class Que6
+{
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	int a[]=new int[10];
+	int i,sum=0,Avg;
+	for(i=0;i<10;i++)
+	{
+	 a[i]=sc.nextInt();
+	}
+	for(i=0;i<10;i++)
+	{
+	sum=sum+a[i];
+	}
+	System.out.println(sum);
+	Avg = sum/10;
+	System.out.println(Avg);
+	}
+}
+
+------------------------------------------------------
+
+
+import java.util.Scanner;
+class Que7
+{//reverse element of array
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+	int n=sc.nextInt();
+	int b[] = new int[n];
+	int a[] = new int[n];
+	//b[]=sc.nextInt();
+	for(int i=0;i<n;i++)
+            {
+		a[i]=sc.nextInt();
+	    }
+	int j=n;
+	for(int i=0;i<n;i++)
+            { 
+	    b[j - 1] = a[i]; 
+            j = j - 1;
+            }
+     	for(int k=0;k<n;k++)
+	{
+	System.out.println(b[k]);
+        }   
+    }   
+}
+
+-----------------------------------------------
+
+import java.util.Scanner;
+class Que8
+{//search element of array
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+	int n=sc.nextInt();
+	int a[]=new int[n];
+	for(int i=0;i<n;i++)
+	{
+	a[i]=sc.nextInt();
+	}
+	System.out.println("enter element index you want to search");
+	int search_e=sc.nextInt();
+	for(int j=0;j<n;j++)
+	{
+	if(a[j]==search_e)
+	{
+	System.out.println("yes element is present"+a[j]);
+	}}
+}
+}
+
+-----------------------------------------------------
+
+import java.util.Scanner;
+class Que9
+{//maximum element of array
+    public static void main(String args[])
+    {
+        int sum=0;
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+	int a[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+             for(int i=0;i<n;i++)
+            {
+             for (int j = i + 1; j < n; j++) 
+            {
+                if (a[i] < a[j]) 
+                {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        System.out.print("Descending Order:");
+        for (int i = 0; i <= n - 1; i++) 
+        {
+            System.out.print(a[i] + ",");
+        }
+    }
+}
+
+------------------------------------------------
+
+
+import java.util.Scanner;
+class Que10
+{//add even and odd element of array
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+	int n=sc.nextInt();
+	int a[]=new int[n];
+	int even_s=0,odd_s=0,i;
+	for(i=0;i<n;i++)
+	{
+	a[i]=sc.nextInt();
+	}
+	for(i=0;i<n;i++)
+       {
+           if(a[i]%2==0)
+	   {
+	   even_s=even_s+a[i];
+	   }
+	}
+	System.out.println("even number sum= "+even_s);
+       
+	for(i=0;i<n;i++)
+       {
+	   if(a[i]%2!=0)
+	   {
+	    odd_s=odd_s+a[i];
+	   }
+	}
+	    System.out.println("odd number sum= "+odd_s);
+   }
+}
+
+-------------------------------------------------------
+
+
+
+
+
+
+
+
