@@ -1,0 +1,368 @@
+class America
+{
+	public static void main(String args[])
+	{
+	String a="* * * * * * ========================";
+	String c="====================================";
+		for(int i=0;i<5;i++)
+		{
+		System.out.println(a);
+		System.out.println("  * * * * * ========================");
+		}
+			for(int k=0;k<=10;k++)
+			{
+				System.out.println(c);
+			}
+	}
+}
+-----------------------------------------
+class Art
+{
+	public static void main(String args[])
+	{
+	int a= 125;
+	int b = 24;
+	System.out.println("input first number " +a);
+	System.out.println("input second number " +b);
+	int c= a+b;
+	int d= a-b;
+	int e= a*b;
+	int f= a/b;
+	System.out.println("addition " +c);
+	System.out.println("sub " +d);
+	System.out.println("mul " +e);
+	System.out.println("div " +f);
+	}
+}
+--------------------------------------------
+class Average
+{
+	public static void main(String args[])
+	{
+	int a= 12;
+	int b= 26;
+	int c= 42;
+	System.out.println((a+b+c/3));
+	}
+}
+===================================
+class B1
+{
+	public static void main(String args[])
+	{
+	int a=5;
+	String binaryString = Integer.toBinaryString(a);
+	System.out.println(binaryString);
+	}
+}
+----------------------------------------
+import java.util.Scanner;
+class BinaryToDec
+{
+    public static void main(String args[]){
+       Scanner input = new Scanner( System.in );
+       System.out.print("Enter a binary number: ");
+       String binaryString =input.nextLine();
+       System.out.println("Output: "+Integer.parseInt(binaryString,2));
+    }
+}
+-------------------------------------------------
+import java.util.*;
+public class BintoOct
+{
+public static void main(String[] args) 
+    {
+        int binnum, binnum1,rem, decnum=0, quot, i=1, j;
+        int octnum[] = new int[100];
+        Scanner scan = new Scanner(System.in);
+		System.out.print("Input a Binary Number : ");
+        binnum = scan.nextInt();
+        binnum1=binnum;
+     
+      while(binnum > 0)
+        {
+            rem = binnum % 10;
+            decnum = decnum + rem*i;
+            //System.out.println(rem);
+            i = i*2;
+            binnum = binnum/10;
+        }   
+
+		i=1;
+        quot = decnum;
+		
+        while(quot > 0)
+        {
+            octnum[i++] = quot % 8;
+            quot = quot / 8;
+        }
+		
+        System.out.print("Equivalent Octal Value of " +binnum1+ " is :");
+        for(j=i-1; j>0; j--)
+        {
+            System.out.print(octnum[j]);
+        }
+ System.out.print("\n");
+ 
+    }
+}
+==========================================
+import java.util.Scanner;
+public class BinToHex {
+ public static void main(String[] args) 
+ {
+  int[] hex = new int[1000];
+  int i = 1, j = 0, rem, dec = 0, bin;
+  Scanner in = new Scanner(System.in);
+  System.out.print("Input a Binary Number: ");
+  bin = in.nextInt();
+  while (bin > 0) {
+   rem = bin % 2;
+   dec = dec + rem * i;
+   i = i * 2;
+   bin = bin / 10;
+  }
+   i = 0;
+  while (dec != 0) {
+   hex[i] = dec % 16;
+   dec = dec / 16;
+   i++;
+  }
+  System.out.print("HexaDecimal value: ");
+  for (j = i - 1; j >= 0; j--)
+  {
+   if (hex[j] > 9) 
+   {
+    System.out.print((char)(hex[j] + 55)+"\n");
+   } else
+   {
+    System.out.print(hex[j]+"\n");
+   }
+  }
+ }
+}
+
+--------------------------------------------------
+import java.util.Scanner;
+public class DecimalToHexa
+{
+      public static void main(String args[])
+    {
+        int dec_num, rem;
+        String hexdec_num="";
+        
+        /* hexadecimal number digits */
+        
+        char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+        
+        Scanner in = new Scanner(System.in);
+		
+        System.out.print("Input a decimal number: ");
+        dec_num = in.nextInt();
+		
+        while(dec_num>0)
+        {
+            rem = dec_num%16;
+            hexdec_num = hex[rem] + hexdec_num;
+            dec_num = dec_num/16;
+        }
+        System.out.print("Hexadecimal number is : "+hexdec_num+"\n");         
+    }
+}
+------------------------------
+class Divide
+{
+	public static void main(String args[])
+	{
+	int a=50;
+	int b=3;
+	int c= 50/3;
+	System.out.print("division " +c);
+	}
+}
+-----------------------------------------
+class Mul
+{
+	public static void main(String args[])
+	{
+	int a= 25;
+	int b= 5;
+	System.out.println("input first number " +a);
+	System.out.println("input second number " +b);
+	int c=a*b;
+	System.out.println("multiplication "+c);
+	}
+}
+-------------------------------------
+class Name
+{
+	public static void main(String Args[])
+	{
+	System.out.print("Hello"+"\n"+"Tanuja Patil");
+	}
+
+}
+===========================================
+class Operation
+{
+	public static void main(String args[])
+	{
+	int a= -5+8*6;
+	int b=(55+9)%9;
+	int c=20+-3*5/8;
+	int d=5+15/3*2-8%3;
+
+	System.out.println("expression1 "+a);
+	System.out.println("expression2 "+b);
+	System.out.println("expression3 "+c);
+	System.out.println("expression4 "+d);
+	}
+}
+---------------------------
+class Pattern
+{
+	public static void main(String args[])
+	{
+	System.out.println("    J    a   v     v   a");
+	System.out.println("    J   a a   v   v   a a");
+	System.out.println("J   J  aaaaa   v v   aaaaa");
+	System.out.println(" JJ   a     a   v   a     a");
+	}
+}
+--------------------------------------------
+class Pat
+{
+	public static void main(String args[])
+	{
+	System.out.println(" +\"\"\"\"\"+ ");
+	System.out.println("[| o o |]");
+	System.out.println(" |  ^  | ");
+	System.out.println(" | '-' | ");
+	System.out.println(" +-----+ ");
+	}
+}
+==============================================
+class Rect
+{
+	public static void main(String args[])
+	{
+	float w= 5.5f;
+	float h= 8.5f;
+	float a=w*h;
+	float b= 2*(w+h);
+	System.out.println("Area is "+a);
+	System.out.println("perimeter is "+b);
+	}
+}
+-------------------------------------------------
+class Swap
+{
+	public static void main(String args[])
+	{
+	int a=24;
+	int b=36;
+	int t;
+	t=a;
+	a=b;
+	b=t;
+	System.out.println(+a);
+	System.out.println(+b);
+	}
+}
+==============================================
+class Table
+{
+	public static void main(String args[])
+	{
+	int a=8;
+	for(int i=1;i<=10;i++)
+	{
+	System.out.println(a+"*"+i+"="+a*i);
+	}
+	}
+}
+---------------------------------------------
+class Var
+{
+	public static void main(String args[])
+	{
+	int a= 74;
+	int b= 36;
+	int c= a+b;
+	System.out.print("sum " +c);
+	}
+}
+==================================================
+import java.util.Scanner;
+public class OctToDec
+{
+     static int octalToDecimal(int n) 
+    { 
+        int num = n; 
+        int dec_value = 0; 
+  
+        // Initializing base value to 1, i.e 8^0 
+        int base = 1; 
+  
+        int temp = num; 
+        while (temp > 0) { 
+            // Extracting last digit 
+            int last_digit = temp % 10; 
+            temp = temp / 10; 
+  
+            // Multiplying last digit with appropriate 
+            // base value and adding it to dec_value 
+            dec_value += last_digit * base; 
+  
+            base = base * 8; 
+        } 
+        return dec_value; 
+    } 
+  
+    // driver program 
+    public static void main(String[] args) 
+    { 
+        int num = 67; 
+        System.out.println(octalToDecimal(num)); 
+    } 
+} 
+-----------------------------------------------------------------
+class Exp
+{
+	public static void main(String args[])
+	{
+	System.out.println((25.5*3.5-3.5*3.5)/(40.5-4.5));
+	}
+}
+--------------------------------------------------
+class Circle
+{
+	public static void main(String args[])
+	{
+	float r=7.5f;
+	float a=3.14f;
+	float c= a*r*r;
+	float d= a*r;
+	System.out.println("Area "+c);
+	System.out.println("Perimeter "+d);
+	}
+}
+---------------------------------------------------
+class Var2
+{
+	public static void main(String args[])
+	{
+	System.out.print(4.0 * (1 - (1.0/3) + (1.0/5) - (1.0/7) + (1.0/9) - (1.0/11)));
+	}
+}
+---------------------------------------------------------------------------------
+class Var3
+{
+	public static void main(String args[])
+	{int a=76;
+	int b=34;
+	int c=a+b;
+	System.out.println(c);
+}
+}
+----------------------------------------------------------------------------------------------
