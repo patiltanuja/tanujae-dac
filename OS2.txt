@@ -1,0 +1,239 @@
+1. Write a script To check given year is leap or not.
+
+yy=0
+isleap="false"
+ 
+echo -n "Enter year (yyyy) : "
+read yy
+ 
+if [ $((yy % 4)) -ne 0 ] ; then
+  
+elif [ $((yy % 400)) -eq 0 ] ; then
+   
+   isleap="true"
+elif [ $((yy % 100)) -eq 0 ] ; then
+   
+else
+   # it is a leap year
+   isleap="true"
+fi
+if [ "$isleap" == "true" ];
+then
+   echo "$yy is leap year"
+else
+   echo "$yy is NOT leap year"
+fi
+
+
+
+2. Write a script to print day of the week using
+	a) elif	b) case 
+a)
+
+weekday = int(input("Enter weekday day number (1-7) : "))
+
+if weekday == 1 :
+    print("\nMonday");
+
+elif weekday == 2 :
+    print("\nTuesday")
+
+elif(weekday == 3) :
+    print("\nWednesday")
+
+elif(weekday == 4) :
+    print("\nThursday")
+
+elif(weekday == 5) :
+    print("\nFriday")
+
+elif(weekday == 6) :
+    print("\nSaturday")
+
+elif (weekday == 7) :
+    print("\nSunday")
+
+else :
+    print("\nPlease enter weekday number between 1-7.")
+
+
+
+b)
+
+echo "enter a number"
+read n
+case $n in
+1) echo "Sunday" ;;
+2) echo "Monday" ;;
+3) echo "Tuesday" ;;
+4) echo "Wednesday" ;;
+5) echo "Thursday" ;;
+6) echo "Friday" ;;
+7) echo "Saturday" ;;
+*) echo "enter value between 1 to 7" ;;
+esac
+
+
+3. a) Write a script to find biggest of three no.s
+
+echo "Enter Num1"
+read num1
+echo "Enter Num2"
+read num2
+echo "Enter Num3"
+read num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then
+    echo $num1
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+then
+    echo $num2
+else
+    echo $num3
+fi
+
+
+   b) To find avg of 3 no.s, read no.s from keyboard
+
+
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num               #get number
+  sum=$((sum + num))     #sum+=num
+  i=$((i + 1))
+done
+
+avg=$(echo $sum / $N | bc -l)
+
+echo $avg
+
+
+
+4. Write a program to check wahether given no.is even or odd
+
+echo -n "Enter numnber : "
+read n
+ 
+rem=$(( $n % 2 ))
+ 
+if [ $rem -eq 0 ]
+then
+  echo "$n is even number"
+else
+  echo "$n is odd number"
+fi
+
+
+
+5. Write a program to print calendar of current month in next year,previous years.
+	For eg:-sep 2014,sep 2012 if current month is sep 2013	
+
+LAST_YEAR=`date +'%y' -m 'last year'`
+NEXT_YEAR=`date +'%y' -m 'next year'`
+THIS_YEAR=`date +'%y' -m 'now'`
+
+
+6. Write a program to find sum and product of two no.s using 
+a) expr
+
+read a b 
+sum=`expr $a + $b `
+avg=`expr $sum / 2`
+dec=`expr $sum % 2`
+dec=`expr \( $dec \* 1000 \) / 2`
+product=`expr $a \* $b \`
+echo Sum=$sum
+echo Average=$avg.$dec
+echo Product=$product
+
+b) |
+
+#!/bin/bash
+
+echo "Please enter your first number: "
+read a
+echo "Second number: "
+read b
+sum=$(($a + $b))
+avg=$(echo $sum / 2 | bc -l ) 
+prod=$(($a * $b ))
+
+echo "The sum of these numbers is: " $sum
+echo "The average of these numbers is: " $avg
+echo "The product of these numbers is: " $prod
+
+
+	
+7. Write a script to generate Fibonacci series.
+
+N=6 
+a=0
+b=1 
+echo "The Fibonacci series is : "
+for (( i=0; i<N; i++ )) 
+do
+	echo -n "$a "
+	fn=$((a + b)) 
+	a=$b 
+	b=$fn 
+done
+
+
+
+8. Write a shell script to reverse the single strings. 
+
+
+#!/ bin / bash 
+read - p "Enter string:" string 
+	len 
+	= $ 
+{ 
+	#string 
+} 
+for ((i = $len - 1; i >= 0; i--)) 
+	do
+	reverse = "$reverse${string:$i:1}" done 
+		echo "$reverse"
+
+
+9.Write a shell script to reverse the list of strings and reverse each string further in the list.
+
+
+
+#!/ bin / bash
+read - p "Enter string:" string 
+    len 
+    = $ 
+{
+    #string 
+}
+for ((i = $len - 1; i >= 0; i--)) 
+    do
+    reverse = "$reverse${string:$i:1}" done 
+        echo "$reverse"
+
+
+10. Write a shell script to print the reverse of an input number.
+
+clear
+echo "Enter a number"
+read n
+sd=0
+rev=0
+
+while [ $n -gt 0 ]
+do
+    sd=$(( $n % 10 ))
+    rev=$(( $rev *\ 10 + $sd ))
+    n=$(( $n / 10 ))
+done
+
+echo "Reverse number of entered digit is $rev"
