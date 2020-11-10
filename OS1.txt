@@ -1,0 +1,462 @@
+1.Write a shell script to validate password strength. Here are a few assumptions for the password string.
+Length  – minimum of 8 characters.
+Contain both alphabet and number.
+Include both the small and capital case letters.
+If the password doesn’t comply with any of the above conditions, then the script should report it as a <Weak Password>.
+
+
+//os Assignment
+
+echo "enter the password"
+read password
+len="${#password}"
+if test $len -ge 8 ; then
+    echo "$password" | grep -q [0-9]
+     if test $? -eq 0 ; then
+          echo "$password" | grep -q [A-Z]
+               if test $? -eq 0 ; then
+                   echo "$password" | grep -q [a-z]   
+                      if test $? -eq 0 ; then
+                       echo "Strong password"
+                      else
+                       echo "weak password include lower case char"
+                       fi
+              else
+               echo "weak password include capital char" 
+               fi
+      else
+       echo "please include the numbers in password it is weak password"   
+      fi
+else
+ echo "password lenght should be greater than or equal 8 hence weak password"
+ fi
+//-==================================
+1. Write a script to create 10 directories, say a1,a2,...,a10
+Report error if a directory/file exists with the same name.
+
+$ mkdir a1 a2 a3 a4 a5 a6 a7 a8 a9 a10
+
+
+2. Write a menu based script to perform following string operations
+a) To find length of a string
+
+
+${#strvar}
+expr length $strvar
+expr “${strvar}”:’.*’
+$strvar | wc -c
+$strvar |awk '{print length}'
+
+
+c) Copying string
+#!/bin/ksh
+A=' ABCDEF '
+B='HHH'
+
+A=" ${B}${A}"
+
+echo "A->[${A}]"
+
+
+
+d) Concatenation of strings
+
+VAR1="Hello,"
+VAR2=" World"
+VAR3="$VAR1$VAR2"
+echo "$VAR3"
+
+
+e) Compare two strings
+
+#!/bin/bash
+
+VAR1="Linuxize"
+VAR2="Linuxize"
+
+if [ "$VAR1" = "$VAR2" ]; then
+    echo "Strings are equal."
+else
+    echo "Strings are not equal."
+fi
+
+
+f) Reversing a string
+
+$ echo welcome | rev
+
+
+3.Write a shell script to rename all files in the current directory with numeric continuous value(Warning: Do this in a personal folder. Don't use Home directory) 
+
+rename oldname newname *.files
+
+
+4. Write a script that print environment variable(Print $HOME,$PATH,$SHELL,$HISTORY,$LOGNAME,$TERM)
+
+echo "${HOME}"
+
+echo "$PATH"
+
+printf "$VARIABLE_NAME\n"
+printf "String %s" $VARIABLE_NAME
+printf "Signed Decimal Number %d" $VARIABLE_NAME
+printf "Floating Point Number %f" $VARIABLE_NAME
+
+
+
+
+
+echo $TERM
+export TERM=vt100
+
+
+5. Write a shell script to print all files permissions in current directory(Not name or other details)(Use cut commands)
+
+
+$ chmod 755 testfile
+$ls -l testfile
+-rwxr-xr-x  1 amrood   users 1024  Nov 2 00:10  testfile
+
+
+
+
+
+6. Write a shell script to print all files permissions and name of file
+
+
+echo "The list of File Names in the curent directory."
+echo "Which have Read,Write and Execute permisions. "
+for file in *
+do
+if [ -f $file ]
+then
+if [ -r $file -a -w $file -a -x $file ]
+then
+ls -l $file
+fi
+fi
+done
+
+
+
+
+7.Write a shell script to print all files name and size greater than 5K
+
+
+find -type f -name "*.sh" -size +5k
+
+
+//========================================
+
+mv -i oldname newname 
+mv -i newhw/hw1 oldhw
+mv -i newhw/hw1 oldhw/firsthw 
+
+This command will move a file. You can use mv not only to change the directory location of a file, 
+but also to rename files. 
+Unlike the cp command, mv will not preserve the original file.
+
+//====================
+mkdir mystuff 
+mkdir /tmp/morestuff 
+
+
+To create a subdirectory named morestuff in the existing directory named /tmp
+//=======================
+
+1. ls
+
+ Directory listing
+
+
+2. ls -al
+
+ Formatted listing with hidden files
+
+
+3. ls -lt 
+
+Sorting the Formatted listing by time modification
+
+
+4. cd dir 
+
+Change directory to dir
+
+
+5. cd 
+
+Change to home directory
+
+
+6. pwd 
+
+Show current working directory
+7. mkdir dir 
+mkdir mystuff 
+mkdir /tmp/morestuff 
+
+
+Creating a directory dir
+
+
+8. cat >
+
+file Places the standard input into the file
+
+
+9. more file 
+
+Output the contents of the file
+
+
+10. head file 
+
+Output the first 10 lines of the file
+
+
+11. tail file 
+
+Output the last 10 lines of the file
+
+
+12. tail -f file 
+
+Output the contents of file as it grows,starting with
+the last 10 lines
+
+
+13. touch file 
+
+Create or update file
+
+
+14. rm file 
+
+Deleting the file
+
+
+15. rm -r dir 
+
+Deleting the directory
+
+
+16. rm -f file 
+
+Force to remove the file
+
+
+17. rm -rf dir 
+
+Force to remove the directory dir
+
+
+18. cp file1 file2 
+
+Copy the contents of file1 to file2
+
+
+19. cp -r dir1 dir2 
+
+Copy dir1 to dir2;create dir2 if not present
+
+
+20. mv file1 file2 
+
+Rename or move file1 to file2,if file2 is an existing
+directory
+
+
+21. ln -s file link
+
+ Create symbolic link link to file
+//====================
+1. ps 
+
+To display the currently working processes
+
+
+2. top 
+
+Display all running process
+
+3. kill pid 
+
+Kill the process with given pid
+
+
+4. killall proc 
+
+Kill all the process named proc
+
+
+5. pkill pattern
+
+ Will kill all processes matching the pattern
+
+
+6. bg 
+
+List stopped or background jobs,resume a stopped
+job in the background
+
+
+7. fg 
+
+Brings the most recent job to foreground
+
+
+8. fg n 
+
+Brings job n to the foreground
+
+//=========================
+1. date 
+
+Show the current date and time
+
+
+2. cal 
+   cal 2008
+   cal 6 1970
+
+Show this month's calender
+
+
+3. uptime 
+
+Show current uptime
+
+
+4. w 
+
+Display who is on line
+
+
+5. whoami 
+
+Who you are logged in as
+Unix/Linux Command Reference 
+
+
+6. finger user 
+
+Display information about user
+
+
+7. uname -a 
+
+Show kernel information
+
+8. cat /proc/cpuinfo 
+cat file1 >> file2 
+cat myfile
+
+Cpu information
+
+
+9. cat proc/meminfo 
+
+Memory information
+
+
+10. man command 
+man ls 
+man -k keyword 
+
+Show the manual for command
+
+
+11. df 
+
+Show the disk usage
+
+
+12. du 
+
+Show directory space usage
+
+
+13. free 
+
+Show memory and swap usage
+
+
+14. whereis app 
+
+Show possible locations of app
+
+
+15. which app 
+
+Show which applications will be run by default
+
+16.cd /home/dvader/empire_docs 
+cd .. 
+cd myfiles
+cd /
+
+
+This command changes your current directory location. 
+
+
+17.cp -i oldfile newfile
+cp -i /home/dvader/notes/meeting1 . 
+
+
+This command copies a file, preserving the original and creating an identical copy.
+
+18.find . -name myfile.txt -print 
+find . -name "*.txt" -print 
+
+The find command lists all of the files within a directory 
+
+//=======================
+1. chmod octal file 
+chmod u+x myfile 
+chmod o+rx myfile
+
+Change the permission of file to octal,which can
+be found separately for user,group,world by
+adding,
+• 4-read(r)
+• 2-write(w)
+• 1-execute(x)
+
+
+2. grep -r pattern dir 
+
+Search recursively for pattern in dir
+
+
+3. command | grep pattern
+
+Search pattern in the output of a command
+
+
+4. locate file 
+
+Find all instances of file
+
+
+5. find . -name filename 
+find . -name myfile.txt -print 
+find . -name "*.txt" -print 
+find /home/user/myusername/ -name myfile.txt -print 
+find "$HOME/" -name myfile.txt -print 
+
+
+Searches in the current directory (represented by
+a period) and below it, for files and directories with
+names starting with filename
+
+
+6. pgrep pattern 
+
+Searches for all the named processes , that
+matches with the pattern and, by default, returns
+their ID
+
+7.grep pattern file 
+
+Search for pattern in file
